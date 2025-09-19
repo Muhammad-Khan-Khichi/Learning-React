@@ -2,11 +2,26 @@ import ProfileCard from "./components/ProfileCard";
 import AlexaImage from "./assets/alexa.png";
 import CortanaImage from "./assets/cortana.png";
 import SiriImage from "./assets/siri.png";
+import { useState } from "react";
 
 function App() {
+
+  const [count, setCount] = useState(0)
+
+  const handleClick = () => {
+    setCount(count + 1)
+  }
+
   return (
     <>
-      <h1 className="text-center bg-green-500 p-3 mb-10">
+
+      {/* adding state concept */}
+
+        <button className="bg-green-300 p-2 cursor-pointer" onClick={handleClick}>Click me!</button>
+        <div>Number increase by 1: {count}</div>
+
+
+      {/* <h1 className="text-center bg-green-500 p-3 mb-10">
         Personal Digital Assistants
       </h1>
 
@@ -35,7 +50,7 @@ function App() {
             desc="Children laughed joyfully in the park, chasing butterflies and dreams, while the world felt endlessly alive."
           />
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
